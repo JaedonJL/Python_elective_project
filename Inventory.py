@@ -1,16 +1,16 @@
 import RPi.GPIO as GPIO
+import SimpleMFRC522
 import tkinter as tk
 import requests
-from tkinter import messagebox
 from tkinter import simpledialog
-import hal_rfid_reader as rfid
-import hal_temp_humidity_sensor as sensors
 
+
+# Light-wear and Transitional Outfit Inventories
 lightwear_inventory = []
 transitional_inventory = []
 
 def read_write_rfid():
-    rfid_reader = rfid.SimpleMFRC522()
+    rfid_reader = SimpleMFRC522.SimpleMFRC522()
 
     try:
         while True:
@@ -31,7 +31,7 @@ def read_write_rfid():
                             rfid_reader.write(data_to_write)
                             print(f"Data written: {data_to_write}")
 
-                            # Append data into inventory list
+                            # Add the data to the appropriate inventory list
                             if clothing_type.lower() == "lightwear":
                                 lightwear_inventory.append(data_to_write)
                             elif clothing_type.lower() == "transitional":
@@ -49,7 +49,7 @@ def read_write_rfid():
                             rfid_reader.write(data_to_write)
                             print(f"Data written: {data_to_write}")
 
-                            # Append data into inventory list
+                            # Add the data to the appropriate inventory list
                             if clothing_type.lower() == "lightwear":
                                 lightwear_inventory.append(data_to_write)
                             elif clothing_type.lower() == "transitional":
@@ -132,8 +132,3 @@ outfit_label.pack()
 
 # Run the main event loop
 window.mainloop()
-
-
-
-
-
