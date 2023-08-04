@@ -5,7 +5,7 @@ from tkinter import messagebox
 from tkinter import simpledialog
 import hal_rfid_reader as rfid
 import hal_temp_humidity_sensor as sensors
-
+import random
 lightwear_inventory = []
 transitional_inventory = []
 
@@ -73,6 +73,20 @@ def recommend_outfit(temperature, humidity):
         else:
             outfit_label.config(text="No Transitional outfit available in inventory")
 
+
+#def recommend_outfit(temperature, humidity, lightwear_inventory, transitional_inventory, outfit_label):
+    if temperature > 25 and humidity > 60:
+        if lightwear_inventory:
+            recommended_outfit = random.choice(lightwear_inventory)
+            outfit_label.config(text=f"Recommended Light-wear Outfit: {recommended_outfit}")
+        else:
+            outfit_label.config(text="No Light-wear outfit available in inventory")
+    else:
+        if transitional_inventory:
+            recommended_outfit = random.choice(transitional_inventory)
+            outfit_label.config(text=f"Recommended Transitional Outfit: {recommended_outfit}")
+        else:
+            outfit_label.config(text="No Transitional outfit available in inventory")
 
 # Function to fetch weather data from ThingSpeak API
 def fetch_weather():
