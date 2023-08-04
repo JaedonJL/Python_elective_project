@@ -1,6 +1,9 @@
 import time
 import requests
 
+
+
+
 temperature = [1, 2, 3, 5, 6, 7, 8]
 humidity = [7, 3, 7, 5, 4, 2, 1]
 

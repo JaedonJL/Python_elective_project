@@ -4,8 +4,10 @@ import requests
 from tkinter import messagebox
 from tkinter import simpledialog
 import hal_rfid_reader as rfid
-import hal_temp_humidity_sensor as sensors
+import hal_temp_humidity_sensor
 import random
+import threading
+
 lightwear_inventory = []
 transitional_inventory = []
 
