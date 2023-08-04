@@ -4,7 +4,7 @@ import requests
 from tkinter import messagebox
 from tkinter import simpledialog
 import hal_rfid_reader as rfid
-import hal_temp_humidity_sensor
+import hal_temp_humidity_sensor 
 import random
 import threading
 
