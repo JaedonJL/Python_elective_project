@@ -27,5 +27,4 @@ import requests as req
 #       else:
 #            print("Failed to get reading, will try again")
 
-# Replace 'YOUR_API_KEY' with your actual ThingSpeak API key
-#send_sensor_data_to_thingspeak(api_key='YOUR_API_KEY')
+#send_sensor_data_to_thingspeak(api_key='R6J56QOW5UG7ALMV')
